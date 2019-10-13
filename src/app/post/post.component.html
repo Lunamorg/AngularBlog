@@ -1,0 +1,16 @@
+<li [ngClass]="{'list-group-item': true, 'list-group-item-success': getPostLoveIt() > 0, 'list-group-item-danger': getPostLoveIt() < 0}">
+    <div class="row">
+        <h4 class="col-xs-10" [ngStyle]="{color: getTextColor()}">{{ postTitle }} </h4> 
+        <h5 class="col-xs-2"> {{ getDate() | date: 'd/MM/y, h:mm a' }}</h5>   
+    </div>
+    <div class="row" [ngStyle]="{color: getTextColor()}">
+        <p class="col-xs-12">{{ getPostContent() }}</p> 
+    </div>
+
+    <!-- <div>Post Love it : {{ getPostLoveIt() }}</div> -->
+                
+    <div class="row">
+      <button class="btn btn-success col-xs-1" (click)="setLoveIt(1)">Love it</button>
+       <button class="btn btn-danger  col-xs-1" (click)="setLoveIt(-1)">Don't love it!</button>
+    </div>       
+</li>
